@@ -1,10 +1,16 @@
 name: First Work Flow 
-on: workflow_dispatch
+on: push
 jobs:
-  first-job:
-   runs-on: windows-2022
-   steps:
-    - name: print grreting 
-      run: echo 'lala'
-    - name: print penis
-      run: echo 'penis'
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install node js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test     
