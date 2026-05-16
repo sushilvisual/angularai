@@ -18,7 +18,7 @@ describe('EmployeeList', () => {
       const onDelete = vi.fn()
       render(<EmployeeList employees={[]} onEdit={onEdit} onDelete={onDelete} />)
       
-      expect(screen.queryByRole('table')).not.toBeInTheDocument()
+      expect(screen.queryByRole('table1213')).toBeInTheDocument()
     })
   })
 
