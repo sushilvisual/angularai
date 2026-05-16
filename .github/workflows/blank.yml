@@ -1,0 +1,10 @@
+name: First Work Flow 
+on: workflow_dispatch
+jobs:
+  first-job:
+   runs-on: windows-2022
+   steps:
+    - name: print grreting 
+      run: echo 'lala;
+    - name: print penis
+      run: echo 'penis'
