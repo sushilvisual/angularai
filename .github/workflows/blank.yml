@@ -5,6 +5,6 @@ jobs:
    runs-on: windows-2022
    steps:
     - name: print grreting 
-      run: echo 'lala;
+      run: echo 'lala'
     - name: print penis
       run: echo 'penis'
