@@ -1,0 +1,21 @@
+# This workflow runs on pull requests to the main, develop, and feature branches. The job of this branch is change the PR title. title will be merge branch name to branch against pull request raised. 
+
+name: Update PR Title
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - feature/*   
+jobs:
+  update-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update PR title
+        uses: peter-evans/update-pull-request-title@v1
+        with:
+          title: 'Merge ${{ github.head_ref }} to ${{ github.base_ref }}'
+          token: ${{ secrets.GITHUB_TOKEN }}  
+      - name: Check PR title
+        run: |
+          echo "PR title updated to: Merge ${{ github.head_ref }} to ${{ github.base_ref }}"
